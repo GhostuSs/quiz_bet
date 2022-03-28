@@ -15,13 +15,12 @@ class App extends StatelessWidget {
       designSize: const Size(390, 844),
       builder: () => MaterialApp(
         routes: routes,
+        initialRoute: MainNavigationRoutes.onboarding,
         debugShowCheckedModeBanner: false,
-        title: 'Flutter_ScreenUtil',
         theme: ThemeData(
           primarySwatch: Colors.blue,
           textTheme: TextTheme(button: TextStyle(fontSize: 45.sp)),
         ),
-        home: const MyHomePage(),
       ),
     );
   }
