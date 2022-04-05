@@ -25,6 +25,14 @@ class _MainScreenState extends State<MainScreen> {
       bottomNavigationBar: BottomNavigationBarTheme(
           data: BottomNavigationBarThemeData(
               selectedItemColor: AppColors.green,
+              selectedLabelStyle: TextStyle(
+                  fontFamily: 'Bakbak',
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12.h),
+              unselectedLabelStyle: TextStyle(
+                  fontFamily: 'Bakbak',
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12.h),
               unselectedIconTheme: IconThemeData(color: AppColors.white)),
           child: CupertinoTabBar(
             items: [
@@ -34,9 +42,10 @@ class _MainScreenState extends State<MainScreen> {
                   activeIcon: Assets.images.quiz.svg(color: AppColors.green)),
               BottomNavigationBarItem(
                   label: 'Settings',
-                  icon: Assets.images.settings.svg(color: AppColors.white),
-                  activeIcon:
-                      Assets.images.settings.svg(color: AppColors.green)),
+                  icon: Assets.images.settings
+                      .svg(color: AppColors.white, width: 24.w, height: 24.h),
+                  activeIcon: Assets.images.settings
+                      .svg(color: AppColors.green, width: 24.w, height: 24.h)),
             ],
             activeColor: AppColors.green,
             inactiveColor: AppColors.white,

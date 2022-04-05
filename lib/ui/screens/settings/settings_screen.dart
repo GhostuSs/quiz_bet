@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_bet/gen/assets.gen.dart';
 import 'package:quiz_bet/ui/uikit/settings_button.dart';
-
 import '../../../data/app_settings/color_pallete/colors.dart';
-import '../../uikit/rounded_button.dart';
 
 class SettingsScreen extends StatefulWidget {
   @override
@@ -18,7 +16,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
