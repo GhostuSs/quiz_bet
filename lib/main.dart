@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_bet/data/app_settings/navigation/routes.dart';
-import 'package:quiz_bet/ui/screens/home.dart';
+import 'package:quiz_bet/ui/screens/home/home.dart';
 
 void main() => runApp(const App());
 
@@ -14,8 +14,9 @@ class App extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(390, 844),
       builder: () => MaterialApp(
+        darkTheme: ThemeData.dark(),
         routes: routes,
-        initialRoute: MainNavigationRoutes.onboarding,
+        initialRoute: MainNavigationRoutes.main,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,

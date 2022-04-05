@@ -12,9 +12,33 @@ import 'package:flutter/services.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/PrivacyPolicy.svg
+  SvgGenImage get privacyPolicy =>
+      const SvgGenImage('assets/images/PrivacyPolicy.svg');
+
+  /// File path: assets/images/buyPremium.svg
+  SvgGenImage get buyPremium =>
+      const SvgGenImage('assets/images/buyPremium.svg');
+
   /// File path: assets/images/onboardingBg.svg
   SvgGenImage get onboardingBg =>
       const SvgGenImage('assets/images/onboardingBg.svg');
+
+  /// File path: assets/images/quiz.svg
+  SvgGenImage get quiz => const SvgGenImage('assets/images/quiz.svg');
+
+  /// File path: assets/images/rateApp.svg
+  SvgGenImage get rateApp => const SvgGenImage('assets/images/rateApp.svg');
+
+  /// File path: assets/images/settings.svg
+  SvgGenImage get settings => const SvgGenImage('assets/images/settings.svg');
+
+  /// File path: assets/images/support.svg
+  SvgGenImage get support => const SvgGenImage('assets/images/support.svg');
+
+  /// File path: assets/images/termsOfUse.svg
+  SvgGenImage get termsOfUse =>
+      const SvgGenImage('assets/images/termsOfUse.svg');
 }
 
 class Assets {

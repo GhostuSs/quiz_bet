@@ -18,21 +18,20 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.17.0-69.2.beta <3.0.0"
+  sdk: ">=2.16.2-69.2.beta <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   mobx: ^2.0.6+1
   flutter_mobx: ^2.0.4
-
   flutter_screenutil: ^5.3.1
   cupertino_icons: ^1.0.4
   flutter_svg: ^1.0.3
   intl: ^0.17.0
 
 dev_dependencies:
-  # flutter packages pub run build_runner build --delete-conflictiong-outputs
+  # flutter packages pub run build_runner build --delete-conflicting-outputs
   build_runner: ^2.1.8
   flutter_gen_runner: ^4.1.6
   flutter_test:
