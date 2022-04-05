@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_bet/data/app_settings/navigation/routes.dart';
-import 'package:quiz_bet/ui/screens/home/home.dart';
 
-void main() => runApp(const App());
+Future<void> main() async {
+  final a = await rootBundle.loadString('assets/quiz.json');
+  print(a);
+  runApp(const App());
+}
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(

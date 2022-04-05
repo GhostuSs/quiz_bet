@@ -60,6 +60,7 @@ flutter:
   generate: true
   assets:
     - assets/images/
+    - assets/quiz.json
   fonts:
     - family: Bakbak
       fonts:
