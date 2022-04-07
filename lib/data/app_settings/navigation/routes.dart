@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../ui/screens/home/home.dart';
 import '../../../ui/screens/main_screen.dart';
 import '../../../ui/screens/onboarding/ui/onboarding_screen.dart';
 

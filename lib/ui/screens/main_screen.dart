@@ -5,7 +5,6 @@ import 'package:quiz_bet/ui/screens/settings/settings_screen.dart';
 
 import '../../data/app_settings/color_pallete/colors.dart';
 import '../../gen/assets.gen.dart';
-import '../uikit/rounded_button.dart';
 import 'home/home.dart';
 
 class MainScreen extends StatefulWidget {
@@ -33,7 +32,7 @@ class _MainScreenState extends State<MainScreen> {
                   fontFamily: 'Bakbak',
                   fontWeight: FontWeight.w400,
                   fontSize: 12.h),
-              unselectedIconTheme: IconThemeData(color: AppColors.white)),
+              unselectedIconTheme: const IconThemeData(color: AppColors.white)),
           child: CupertinoTabBar(
             items: [
               BottomNavigationBarItem(

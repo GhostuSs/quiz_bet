@@ -4,13 +4,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../data/app_settings/color_pallete/colors.dart';
 
 class RoundedRectangleBtn extends StatelessWidget {
-  const RoundedRectangleBtn({Key? key, required this.label}) : super(key: key);
-
+  const RoundedRectangleBtn(
+      {Key? key, required this.label, required this.onTap})
+      : super(key: key);
+  final VoidCallback onTap;
   final String label;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: onTap,
       borderRadius: BorderRadius.circular(3.h),
       child: Container(
         decoration: BoxDecoration(
