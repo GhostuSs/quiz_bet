@@ -15,47 +15,35 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  List<Widget> screens = [const HomeScreen(), SettingsScreen()];
+  List<Widget> screens = [HomeScreen(), SettingsScreen()];
   int currIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBarTheme(
-          data: BottomNavigationBarThemeData(
-              selectedItemColor: AppColors.green,
-              selectedLabelStyle: TextStyle(
-                  fontFamily: 'Bakbak',
-                  fontWeight: FontWeight.w400,
-                  fontSize: 12.h),
-              unselectedLabelStyle: TextStyle(
-                  fontFamily: 'Bakbak',
-                  fontWeight: FontWeight.w400,
-                  fontSize: 12.h),
-              unselectedIconTheme: const IconThemeData(color: AppColors.white)),
-          child: CupertinoTabBar(
-            items: [
-              BottomNavigationBarItem(
-                  icon: Assets.images.quiz.svg(color: AppColors.white),
-                  label: 'Quiz',
-                  activeIcon: Assets.images.quiz.svg(color: AppColors.green)),
-              BottomNavigationBarItem(
-                  label: 'Settings',
-                  icon: Assets.images.settings
-                      .svg(color: AppColors.white, width: 24.w, height: 24.h),
-                  activeIcon: Assets.images.settings
-                      .svg(color: AppColors.green, width: 24.w, height: 24.h)),
-            ],
-            activeColor: AppColors.green,
-            inactiveColor: AppColors.white,
-            backgroundColor: AppColors.bglBlue,
-            currentIndex: currIndex,
-            onTap: (index) {
-              setState(() {
-                currIndex = index;
-              });
-            },
-          )),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+              icon: Assets.images.quiz.svg(color: AppColors.white),
+              label: 'Quiz',
+              activeIcon: Assets.images.quiz.svg(color: AppColors.green)),
+          BottomNavigationBarItem(
+              label: 'Settings',
+              icon: Assets.images.settings
+                  .svg(color: AppColors.white, width: 24.w, height: 24.h),
+              activeIcon: Assets.images.settings
+                  .svg(color: AppColors.green, width: 24.w, height: 24.h)),
+        ],
+        //activeColor: AppColors.green,
+        // inactiveColor: AppColors.white,
+        backgroundColor: AppColors.bglBlue,
+        currentIndex: currIndex,
+        onTap: (index) {
+          setState(() {
+            currIndex = index;
+          });
+        },
+      ),
       body: Container(
         child: screens[currIndex],
       ),

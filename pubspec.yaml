@@ -23,8 +23,11 @@ environment:
 dependencies:
   json_serializable: ^6.1.5
   flutter_screenutil: ^5.3.1
+  hive: ^2.1.0
+  path_provider: ^2.0.9
   cupertino_icons: ^1.0.4
   flutter_svg: ^1.0.3
+  flutter_svg_provider: ^1.0.3
   intl: ^0.17.0
   flutter:
     sdk: flutter
@@ -50,6 +53,8 @@ flutter:
   generate: true
   assets:
     - assets/images/
+    - assets/images/onboardingBg.svg
+    - assets/images/onBoarding.png
     - assets/quizes.json
   fonts:
     - family: Bakbak

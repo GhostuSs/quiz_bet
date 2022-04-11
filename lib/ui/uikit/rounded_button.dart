@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:quiz_bet/ui/screens/home/models/results/hive_results.dart';
 
 import '../../data/app_settings/color_pallete/colors.dart';
 
 class RoundedRectangleBtn extends StatelessWidget {
   const RoundedRectangleBtn(
-      {Key? key, required this.label, required this.onTap})
+      {Key? key, required this.label, required this.onTap, this.result})
       : super(key: key);
+  final HiveResult? result;
   final VoidCallback onTap;
   final String label;
 
@@ -22,15 +24,28 @@ class RoundedRectangleBtn extends StatelessWidget {
         ),
         width: 155.w,
         height: 155.h,
-        child: Center(
-          child: Text(
-            label,
-            style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'Bakbak',
-                fontSize: 75.h,
-                fontWeight: FontWeight.w400),
-          ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Center(
+              child: Text(
+                label,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: result == null ? AppColors.white : AppColors.green,
+                    fontFamily: 'Bakbak',
+                    fontSize: label == 'RANDOM' ? 65.w : 75.w,
+                    fontWeight: FontWeight.w400),
+              ),
+            ),
+            if (label != 'RANDOM' && result != null)
+              Text('${result!.correctAnswers}/5',
+                  style: TextStyle(
+                      color: AppColors.green,
+                      fontFamily: 'Bakbak',
+                      fontSize: 24.w,
+                      fontWeight: FontWeight.w400))
+          ],
         ),
       ),
     );
