@@ -10,6 +10,7 @@ import 'package:quiz_bet/ui/screens/home/models/results/hive_results.dart';
 import 'package:quiz_bet/ui/screens/quiz/quiz_screen.dart';
 import 'package:quiz_bet/ui/uikit/1xbet_label.dart';
 import 'package:quiz_bet/ui/uikit/rounded_button.dart';
+import '../../../main.dart';
 import 'models/quiz_model.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -81,17 +82,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                   )
                               ],
                             ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 8.w, vertical: 16.h),
-                              child: Container(
-                                height: 100.h,
-                                child: RoundedRectangleBtn(
-                                    label: 'RANDOM',
-                                    onTap: () =>
-                                        _onTap(Random().nextInt(10), data)),
-                              ),
-                            )
+                            if (premium)
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 8.w, vertical: 16.h),
+                                child: Container(
+                                  height: 100.h,
+                                  child: RoundedRectangleBtn(
+                                      label: 'RANDOM',
+                                      onTap: () =>
+                                          _onTap(Random().nextInt(10), data)),
+                                ),
+                              )
                           ],
                         ),
                       )
