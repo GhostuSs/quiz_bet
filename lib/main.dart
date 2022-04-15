@@ -30,7 +30,6 @@ Future<void> main() async {
   premium = prem.values.first;
   final box = await Hive.openBox<HiveResult>('results');
   print(box.values.length);
-  premium = true;
   runApp(const App());
 }
 
