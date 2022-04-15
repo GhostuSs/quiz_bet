@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_bet/gen/assets.gen.dart';
+import 'package:quiz_bet/ui/screens/onboarding/ui/onboarding_screen.dart';
 import 'package:quiz_bet/ui/uikit/settings_button.dart';
 import '../../../data/app_settings/color_pallete/colors.dart';
 
@@ -55,6 +56,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 child: SettingsButton(
                   icon: Assets.images.buyPremium.svg(),
                   label: 'buy premium',
+                  onPressed: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (_) => OnBoardingScreen())),
                 ),
               ),
               Padding(

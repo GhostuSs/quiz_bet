@@ -6,8 +6,10 @@ import '../../data/app_settings/color_pallete/colors.dart';
 class SettingsButton extends StatelessWidget {
   Widget icon;
   String label;
+  final VoidCallback? onPressed;
 
-  SettingsButton({Key? key, required this.icon, required this.label})
+  SettingsButton(
+      {Key? key, required this.icon, required this.label, this.onPressed})
       : super(key: key);
 
   @override
@@ -15,7 +17,7 @@ class SettingsButton extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: InkWell(
-        onTap: () => debugPrint('pressed'),
+        onTap: onPressed ?? () => debugPrint('pressed'),
         borderRadius: BorderRadius.circular(12.r),
         child: Container(
           width: double.infinity,
