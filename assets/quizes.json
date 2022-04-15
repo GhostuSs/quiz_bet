@@ -918,60 +918,6 @@
     ]
   },
   {
-    "5": [
-      {
-        "question": "How many years old are horses that run in the Kentucky Derby?",
-        "answers": [
-          "4",
-          "3",
-          "2",
-          "1"
-        ],
-        "correct": "3"
-      },
-      {
-        "question": "What player was the first to win five straight Wimbledon tennis titles?",
-        "answers": [
-          "Arthur Ashe",
-          "Andre Agassi",
-          "Bjorn Borg",
-          "Roger Federer"
-        ],
-        "correct": "Bjorn Borg"
-      },
-      {
-        "question": "Who ran the first four-minute mile?",
-        "answers": [
-          "Roger Moore",
-          "Banastre Tarleton",
-          "Roger Ramjet",
-          "Roger Bannister"
-        ],
-        "correct": "Roger Bannister"
-      },
-      {
-        "question": "In tennis, what follows a deuce?",
-        "answers": [
-          "advantage",
-          "advection",
-          "advert",
-          "adverb"
-        ],
-        "correct": "advantage"
-      },
-      {
-        "question": "In what sport would one find an Albion round?",
-        "answers": [
-          "badminton",
-          "croquet",
-          "archery",
-          "tennis"
-        ],
-        "correct": "archery"
-      }
-    ]
-  },
-  {
     "18": [
       {
         "question": "How many years old are horses that run in the Kentucky Derby?",
@@ -1076,60 +1022,6 @@
           "Roger Bannister"
         ],
         "correct": "Roger Bannister"
-      }
-    ]
-  },
-  {
-    "5": [
-      {
-        "question": "How many years old are horses that run in the Kentucky Derby?",
-        "answers": [
-          "4",
-          "3",
-          "2",
-          "1"
-        ],
-        "correct": "3"
-      },
-      {
-        "question": "What player was the first to win five straight Wimbledon tennis titles?",
-        "answers": [
-          "Arthur Ashe",
-          "Andre Agassi",
-          "Bjorn Borg",
-          "Roger Federer"
-        ],
-        "correct": "Bjorn Borg"
-      },
-      {
-        "question": "Who ran the first four-minute mile?",
-        "answers": [
-          "Roger Moore",
-          "Banastre Tarleton",
-          "Roger Ramjet",
-          "Roger Bannister"
-        ],
-        "correct": "Roger Bannister"
-      },
-      {
-        "question": "In tennis, what follows a deuce?",
-        "answers": [
-          "advantage",
-          "advection",
-          "advert",
-          "adverb"
-        ],
-        "correct": "advantage"
-      },
-      {
-        "question": "In what sport would one find an Albion round?",
-        "answers": [
-          "badminton",
-          "croquet",
-          "archery",
-          "tennis"
-        ],
-        "correct": "archery"
       }
     ]
   },
