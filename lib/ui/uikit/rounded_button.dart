@@ -32,7 +32,7 @@ class RoundedRectangleBtn extends StatelessWidget {
                 label,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    color: result == null ? AppColors.white : AppColors.green,
+                    color: AppColors.white,
                     fontFamily: 'Bakbak',
                     fontSize: label == 'RANDOM' ? 65.w : 75.w,
                     fontWeight: FontWeight.w400),

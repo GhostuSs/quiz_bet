@@ -59,7 +59,11 @@ class App extends StatelessWidget {
                   fontFamily: 'Bakbak',
                   fontWeight: FontWeight.w400,
                   fontSize: 12.h),
+              showUnselectedLabels: true,
+              showSelectedLabels: true,
+              unselectedItemColor: AppColors.white,
               unselectedLabelStyle: TextStyle(
+                  color: AppColors.white,
                   fontFamily: 'Bakbak',
                   fontWeight: FontWeight.w400,
                   fontSize: 12.h),
