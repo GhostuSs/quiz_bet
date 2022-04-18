@@ -4,6 +4,7 @@ import 'package:hive/hive.dart';
 import 'package:quiz_bet/data/app_settings/color_pallete/colors.dart';
 import 'package:quiz_bet/data/app_settings/navigation/routes.dart';
 import 'package:quiz_bet/main.dart';
+import 'package:quiz_bet/ui/screens/webview/web.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -96,7 +97,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               Padding(
                 padding: EdgeInsets.only(top: 95.h, bottom: 18.h),
                 child: Text(
-                  'Random mode',
+                  'Random Mode',
                   style: TextStyle(
                       color: AppColors.white,
                       height: 0.6,
@@ -130,7 +131,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 height: 18.h,
               ),
               Text(
-                'Ad removing',
+                'Ad Removing',
                 style: TextStyle(
                     color: AppColors.white,
                     fontWeight: FontWeight.w400,
@@ -174,12 +175,12 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               Opacity(
                 opacity: 0.5,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 35.w),
+                  padding: EdgeInsets.symmetric(horizontal: 48.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       InkWell(
-                        onTap: ()=>print('pressed'),
+                        onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>WebViewPage())),
                         child: Text(
                           'Terms of use',
                           style: TextStyle(
@@ -190,7 +191,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         ),
                       ),
                       InkWell(
-                        onTap: ()=>print('pressed'),
+                        onTap: ()=>Navigator.pop(context),
                         child: Text(
                           'Restore',
                           style: TextStyle(
@@ -201,7 +202,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         ),
                       ),
                       InkWell(
-                        onTap: ()=>print('pressed'),
+                        onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>WebViewPage())),
                         child: Text(
                           'Privacy Policy',
                           style: TextStyle(

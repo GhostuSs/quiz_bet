@@ -28,6 +28,7 @@ class _ResultScreenState extends State<ResultScreen> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(child: Scaffold(
+      resizeToAvoidBottomInset: true,
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
             border: Border(top: BorderSide(color: Colors.black.withOpacity(0.3)))
@@ -52,12 +53,7 @@ class _ResultScreenState extends State<ResultScreen> {
             color: AppColors.white,
             fontSize: 12.h,
           ),
-          currentIndex: currIndex,
-          onTap: (index) {
-            setState(() {
-              currIndex = index;
-            });
-          },
+          currentIndex: 0,
         ),
       ),
       body: Container(
@@ -108,15 +104,13 @@ class _ResultScreenState extends State<ResultScreen> {
                   style: TextStyle(
                       color: AppColors.white,
                       fontSize: 187.w,
-                      height: 1.3.h,
+                      height: 1.5.h,
                       fontWeight: FontWeight.w400,
                       fontFamily: 'Bakbak'),
                 ),
-                SizedBox(
-                  height: 80.h,
-                ),
+                Spacer(),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 88.w),
+                  padding: EdgeInsets.only(left: 88.w,right: 88.w,bottom: 22.h),
                   child: InkWell(
                     onTap: () async {
                       final box = await Hive.openBox<HiveResult>('results');

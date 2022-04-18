@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_bet/gen/assets.gen.dart';
 import 'package:quiz_bet/ui/screens/onboarding/ui/onboarding_screen.dart';
+import 'package:quiz_bet/ui/screens/webview/web.dart';
 import 'package:quiz_bet/ui/uikit/settings_button.dart';
 import '../../../data/app_settings/color_pallete/colors.dart';
 
@@ -63,6 +64,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               Padding(
                 padding: EdgeInsets.only(bottom: 16.h),
                 child: SettingsButton(
+                  onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>WebViewPage())),
                   icon: Assets.images.privacyPolicy.svg(),
                   label: 'privacy policy',
                 ),
@@ -70,6 +72,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               Padding(
                 padding: EdgeInsets.only(bottom: 16.h),
                 child: SettingsButton(
+                    onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>WebViewPage())),
                   icon: Assets.images.termsOfUse.svg(),
                   label: 'Terms of use',
                 ),

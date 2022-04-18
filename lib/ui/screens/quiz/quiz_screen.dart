@@ -30,14 +30,14 @@ class _QuizScreenState extends State<QuizScreen> {
   int currIndex = 0;
   bool isCorrect = false;
   int isChosen = 0;
-  bool fiftyFiftyEnable = false;
+  bool fiftyFiftyEnable = true;
   Answered answered = Answered.notStated;
   List<bool> visible = List.generate(4, (index) => true);
 
   @override
   Widget build(BuildContext context) {
     return WillPopScope(child: Scaffold(
-      floatingActionButton: premium
+      floatingActionButton: premium&&fiftyFiftyEnable
           ? Padding(
         padding: EdgeInsets.only(bottom: 107.h),
         child: InkWell(
@@ -45,6 +45,7 @@ class _QuizScreenState extends State<QuizScreen> {
             setState(() {
               visible.clear();
               visible.addAll(_fiftyFifty());
+              fiftyFiftyEnable=false;
             });
           },
           child: Container(
@@ -93,12 +94,7 @@ class _QuizScreenState extends State<QuizScreen> {
             color: AppColors.white,
             fontSize: 12.h,
           ),
-          currentIndex: currIndex,
-          onTap: (index) {
-            setState(() {
-              currIndex = index;
-            });
-          },
+          currentIndex: 0,
         ),
       ),
       body: Container(
@@ -231,7 +227,7 @@ class _QuizScreenState extends State<QuizScreen> {
         .indexWhere((element) => element == widget.quiz[index].correct);
     print('correct $correct');
     List<bool> list = List.generate(4, (index) => true);
-    if (answered == Answered.notStated) {
+    if (answered == Answered.notStated&&fiftyFiftyEnable) {
       while (indexes.contains(correct) || indexes.length < 2) {
         int test = Random().nextInt(4);
         if (test != correct && !indexes.contains(test)) indexes.add(test);
@@ -262,6 +258,7 @@ class _QuizScreenState extends State<QuizScreen> {
         setState(() {
           index++;
           answered = Answered.notStated;
+          fiftyFiftyEnable=true;
           visible = List.generate(4, (index) => true);
         });
       });
