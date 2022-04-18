@@ -191,7 +191,17 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         ),
                       ),
                       InkWell(
-                        onTap: ()=>Navigator.pop(context),
+                        onTap: () async {
+                          final box = await Hive.openBox<bool>('premium');
+                          await box.clear();
+                          await box.put('premium', true);
+                          premium=true;
+                          final onboardingSeen = await Hive.openBox<bool>('seen');
+                          await onboardingSeen.clear();
+                          await onboardingSeen.put('seen', true);
+                          seen=true;
+                          Navigator.pop(context);
+                        },
                         child: Text(
                           'Restore',
                           style: TextStyle(
