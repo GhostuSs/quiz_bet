@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:hive/hive.dart';
 import 'package:quiz_bet/data/app_settings/color_pallete/colors.dart';
 import 'package:quiz_bet/data/app_settings/navigation/routes.dart';
-import 'package:quiz_bet/gen/assets.gen.dart';
-import 'package:quiz_bet/ui/uikit/1xbet_label.dart';
+import 'package:quiz_bet/main.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -20,6 +18,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.usualBlue,
       resizeToAvoidBottomInset: false,
       body: Container(
         decoration: BoxDecoration(
@@ -148,7 +147,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     await box.put('premium', true);
                     final seen = await Hive.openBox<bool>('seen');
                     await seen.clear();
-                    await box.put('seen', true);
+                    await seen.put('seen', true);
+                    premium=true;
                     Navigator.pushNamed(context, MainNavigationRoutes.main);
                   },
                   child: Container(

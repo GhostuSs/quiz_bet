@@ -24,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Iterable<HiveResult> results = [];
 
   Future<bool> loadHive() async {
+
     await Hive.openBox<HiveResult>('results')
         .then((value) => results = value.values);
     return true;
@@ -82,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   )
                               ],
                             ),
-                            if (premium)
+                            if (premium==true)
                               Padding(
                                 padding: EdgeInsets.symmetric(
                                     horizontal: 8.w, vertical: 16.h),

@@ -27,9 +27,9 @@ Future<void> main() async {
   Hive.registerAdapter<HiveResult>(HiveResultAdapter());
   final onboardingSeen = await Hive.openBox<bool>('seen');
   final prem = await Hive.openBox<bool>('premium');
-  if (onboardingSeen.values.isEmpty) onboardingSeen.put('seen', false);
+  if (onboardingSeen.values.isEmpty) await onboardingSeen.put('seen', false);
   seen = onboardingSeen.values.first;
-  if (prem.values.isEmpty) prem.put('premium', false);
+  if (prem.values.isEmpty) await prem.put('premium', false);
   premium = prem.values.first;
   final box = await Hive.openBox<HiveResult>('results');
   print(box.values.length);
@@ -49,7 +49,7 @@ class App extends StatelessWidget {
           unselectedWidgetColor: AppColors.white.withOpacity(0.3),
         ),
         routes: routes,
-        initialRoute: seen || premium
+        initialRoute: seen==true && premium==true
             ? MainNavigationRoutes.main
             : MainNavigationRoutes.onboarding,
         debugShowCheckedModeBanner: false,
