@@ -67,18 +67,24 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: [
                                 for (int i = 1; i < 21; i++)
                                   Padding(
-                                    padding: EdgeInsets.all(8.w),
-                                    child: RoundedRectangleBtn(
-                                      label: (i).toString(),
-                                      onTap: () => _onTap(i, data),
-                                      result: results
-                                              .where((element) =>
-                                                  element.quizIndex ==
-                                                  i.toString())
-                                              .isNotEmpty
-                                          ? results.firstWhere((element) =>
-                                              element.quizIndex == i.toString())
-                                          : null,
+                                    padding: EdgeInsets.all(6.w),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(8.h),
+                                        border: Border.all(color: AppColors.white.withOpacity(0.3))
+                                      ),
+                                      child: RoundedRectangleBtn(
+                                        label: (i).toString(),
+                                        onTap: () => _onTap(i, data),
+                                        result: results
+                                            .where((element) =>
+                                        element.quizIndex ==
+                                            i.toString())
+                                            .isNotEmpty
+                                            ? results.firstWhere((element) =>
+                                        element.quizIndex == i.toString())
+                                            : null,
+                                      ),
                                     ),
                                   )
                               ],
@@ -89,6 +95,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                     horizontal: 8.w, vertical: 16.h),
                                 child: Container(
                                   height: 100.h,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8.r),
+                                    border: Border.all(color: AppColors.white.withOpacity(0.3))
+                                  ),
                                   child: RoundedRectangleBtn(
                                       label: 'RANDOM',
                                       onTap: () =>
