@@ -36,32 +36,32 @@ class _QuizScreenState extends State<QuizScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return WillPopScope(child: Scaffold(
       floatingActionButton: premium
           ? Padding(
-              padding: EdgeInsets.only(bottom: 107.h),
-              child: InkWell(
-                onTap: () {
-                  setState(() {
-                    visible.clear();
-                    visible.addAll(_fiftyFifty());
-                  });
-                },
-                child: Container(
-                  height: 56.h,
-                  width: 200.w,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12.r),
-                      color: AppColors.green),
-                  child: Center(
-                    child: Text(
-                      '50/50'.toUpperCase(),
-                      style: TextStyle(
+        padding: EdgeInsets.only(bottom: 107.h),
+        child: InkWell(
+          onTap: () {
+            setState(() {
+              visible.clear();
+              visible.addAll(_fiftyFifty());
+            });
+          },
+          child: Container(
+            height: 56.h,
+            width: 200.w,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12.r),
+                color: AppColors.green),
+            child: Center(
+              child: Text(
+                '50/50'.toUpperCase(),
+                style: TextStyle(
                   color: AppColors.darkblue,
-                        fontWeight: FontWeight.w400,
-                        fontFamily: 'Bakbak',
-                        fontSize: 20.w,
-                      ),
+                  fontWeight: FontWeight.w400,
+                  fontFamily: 'Bakbak',
+                  fontSize: 20.w,
+                ),
               ),
             ),
           ),
@@ -69,32 +69,37 @@ class _QuizScreenState extends State<QuizScreen> {
       )
           : Container(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-              icon: Assets.images.quiz.svg(color: AppColors.white),
-              label: 'Quiz',
-              activeIcon: Assets.images.quiz.svg(color: AppColors.green)),
-          BottomNavigationBarItem(
-              label: 'Settings',
-              icon: Assets.images.settings
-                  .svg(color: AppColors.white, width: 24.w, height: 24.h),
-              activeIcon: Assets.images.settings
-                  .svg(color: AppColors.green, width: 24.w, height: 24.h)),
-        ],
-        backgroundColor: AppColors.bglBlue,
-        unselectedLabelStyle: TextStyle(
-          fontFamily: 'Bakbak',
-          fontWeight: FontWeight.w400,
-          color: AppColors.white,
-          fontSize: 12.h,
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+            border: Border(top: BorderSide(color: Colors.black.withOpacity(0.3)))
         ),
-        currentIndex: currIndex,
-        onTap: (index) {
-          setState(() {
-            currIndex = index;
-          });
-        },
+        child: BottomNavigationBar(
+          items: [
+            BottomNavigationBarItem(
+                icon: Assets.images.quiz.svg(color: AppColors.white),
+                label: 'Quiz',
+                activeIcon: Assets.images.quiz.svg(color: AppColors.green)),
+            BottomNavigationBarItem(
+                label: 'Settings',
+                icon: Assets.images.settings
+                    .svg(color: AppColors.white, width: 24.w, height: 24.h),
+                activeIcon: Assets.images.settings
+                    .svg(color: AppColors.green, width: 24.w, height: 24.h)),
+          ],
+          backgroundColor: AppColors.bglBlue,
+          unselectedLabelStyle: TextStyle(
+            fontFamily: 'Bakbak',
+            fontWeight: FontWeight.w400,
+            color: AppColors.white,
+            fontSize: 12.h,
+          ),
+          currentIndex: currIndex,
+          onTap: (index) {
+            setState(() {
+              currIndex = index;
+            });
+          },
+        ),
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -149,7 +154,7 @@ class _QuizScreenState extends State<QuizScreen> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                           borderRadius:
-                                              BorderRadius.circular(8.r),
+                                          BorderRadius.circular(8.r),
                                           color: AppColors.usualBlue),
                                       width: 145.w,
                                       height: 145.h,
@@ -177,7 +182,7 @@ class _QuizScreenState extends State<QuizScreen> {
           ),
         ),
       ),
-    );
+    ), onWillPop: ()async=>false);
   }
 
   List<Color> textColorSelector(int chosenAnswIndex) {

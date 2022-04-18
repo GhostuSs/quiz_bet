@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
@@ -14,6 +15,8 @@ bool premium = false;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+  [DeviceOrientation.portraitUp]);
   Directory directory = Directory.current;
   if (Platform.isIOS) {
     directory = await getApplicationDocumentsDirectory();
@@ -43,10 +46,10 @@ class App extends StatelessWidget {
       builder: () => MaterialApp(
         darkTheme: ThemeData(
           selectedRowColor: AppColors.green,
-          unselectedWidgetColor: AppColors.white,
+          unselectedWidgetColor: AppColors.white.withOpacity(0.3),
         ),
         routes: routes,
-        initialRoute: seen || premium == false
+        initialRoute: seen || premium
             ? MainNavigationRoutes.main
             : MainNavigationRoutes.onboarding,
         debugShowCheckedModeBanner: false,
@@ -60,13 +63,13 @@ class App extends StatelessWidget {
                   fontSize: 12.h),
               showUnselectedLabels: true,
               showSelectedLabels: true,
-              unselectedItemColor: AppColors.white,
+              unselectedItemColor: AppColors.white.withOpacity(0.3),
               unselectedLabelStyle: TextStyle(
-                  color: AppColors.white,
+                  color: AppColors.white.withOpacity(0.3),
                   fontFamily: 'Bakbak',
                   fontWeight: FontWeight.w400,
                   fontSize: 12.h),
-              unselectedIconTheme: const IconThemeData(color: AppColors.white)),
+              unselectedIconTheme: IconThemeData(color: AppColors.white.withOpacity(0.3))),
           textTheme: TextTheme(
               button: TextStyle(
             fontSize: 45.sp,

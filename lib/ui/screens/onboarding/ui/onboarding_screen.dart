@@ -20,6 +20,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
@@ -28,6 +29,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         child: Container(
           decoration: BoxDecoration(),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Row(
@@ -35,12 +37,12 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsets.symmetric(vertical: 62.h, horizontal: 28.w),
+                    EdgeInsets.symmetric(vertical: 62.h, horizontal: 28.w),
                     child: InkWell(
                       onTap: () async {
                         final box = await Hive.openBox<bool>('seen');
                         await box.clear();
-                        box.put('seen', true);
+                        await box.put('seen', true);
                         Navigator.pushNamed(context, MainNavigationRoutes.main);
                       },
                       child: Icon(
@@ -138,7 +140,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               ),
               Padding(
                 padding: EdgeInsets.only(
-                    left: 24.w, right: 24.w, top: 53.h, bottom: 22.h),
+                    left: 24.w, right: 24.w, top: 30.h, bottom: 22.h),
                 child: InkWell(
                   onTap: () async {
                     final box = await Hive.openBox<bool>('premium');
@@ -146,7 +148,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     await box.put('premium', true);
                     final seen = await Hive.openBox<bool>('seen');
                     await seen.clear();
-                    box.put('seen', true);
+                    await box.put('seen', true);
                     Navigator.pushNamed(context, MainNavigationRoutes.main);
                   },
                   child: Container(
@@ -176,29 +178,38 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        'Terms of use',
-                        style: TextStyle(
-                            color: AppColors.white,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: 'Bakbak',
-                            fontSize: 14.w),
+                      InkWell(
+                        onTap: ()=>print('pressed'),
+                        child: Text(
+                          'Terms of use',
+                          style: TextStyle(
+                              color: AppColors.white,
+                              fontWeight: FontWeight.w400,
+                              fontFamily: 'Bakbak',
+                              fontSize: 14.w),
+                        ),
                       ),
-                      Text(
-                        'Restore',
-                        style: TextStyle(
-                            color: AppColors.white,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: 'Bakbak',
-                            fontSize: 14.w),
+                      InkWell(
+                        onTap: ()=>print('pressed'),
+                        child: Text(
+                          'Restore',
+                          style: TextStyle(
+                              color: AppColors.white,
+                              fontWeight: FontWeight.w400,
+                              fontFamily: 'Bakbak',
+                              fontSize: 14.w),
+                        ),
                       ),
-                      Text(
-                        'Privacy Policy',
-                        style: TextStyle(
-                            color: AppColors.white,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: 'Bakbak',
-                            fontSize: 14.w),
+                      InkWell(
+                        onTap: ()=>print('pressed'),
+                        child: Text(
+                          'Privacy Policy',
+                          style: TextStyle(
+                              color: AppColors.white,
+                              fontWeight: FontWeight.w400,
+                              fontFamily: 'Bakbak',
+                              fontSize: 14.w),
+                        ),
                       ),
                     ],
                   ),
