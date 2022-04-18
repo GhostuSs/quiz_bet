@@ -36,7 +36,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 children: [
                   Padding(
                     padding:
-                    EdgeInsets.symmetric(vertical: 62.h, horizontal: 28.w),
+                    EdgeInsets.symmetric(vertical: 57.h, horizontal: 28.w),
                     child: InkWell(
                       onTap: () async {
                         final box = await Hive.openBox<bool>('seen');
