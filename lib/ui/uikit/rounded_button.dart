@@ -27,6 +27,7 @@ class RoundedRectangleBtn extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            SizedBox(height: 15.h,),
             Center(
               child: Text(
                 label,
@@ -38,7 +39,6 @@ class RoundedRectangleBtn extends StatelessWidget {
                     fontWeight: FontWeight.w400),
               ),
             ),
-            SizedBox(height: 5.h,),
             if (label != 'RANDOM' && result != null)
               Text('${result!.correctAnswers}/5',
                   style: TextStyle(

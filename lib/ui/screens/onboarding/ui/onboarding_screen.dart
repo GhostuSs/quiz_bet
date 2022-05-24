@@ -140,18 +140,17 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     fontFamily: 'Bakbak',
                     fontSize: 29.w),
               ),
+              Spacer(),
               Padding(
                 padding: EdgeInsets.only(
-                    left: 24.w, right: 24.w, top: 30.h, bottom: 22.h),
-                child: InkWell(
+                    left: 24.w, right: 24.w, top: 30.h, bottom: 56.h),
+                child: Column(children:[
+                  InkWell(
                   onTap: () async {
-                    final box = await Hive.openBox<bool>('premium');
-                    await box.clear();
-                    await box.put('premium', true);
                     final seen = await Hive.openBox<bool>('seen');
                     await seen.clear();
                     await seen.put('seen', true);
-                    premium=true;
+                    purchase().then((value) =>subscribed=value);
                     Navigator.pushNamed(context, MainNavigationRoutes.main);
                   },
                   child: Container(
@@ -164,7 +163,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       child: Text(
                         'Buy premium'.toUpperCase(),
                         style: TextStyle(
-                          color: AppColors.darkblue,
+                          color: AppColors.white,
                           fontWeight: FontWeight.w400,
                           fontFamily: 'Bakbak',
                           fontSize: 22.w,
@@ -173,61 +172,58 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     ),
                   ),
                 ),
+                  SizedBox(height: 22.h,),
+                  Opacity(
+                    opacity: 0.5,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10.w),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          InkWell(
+                            onTap: ()=>openTermsOfUse(),
+                            child: Text(
+                              'Terms of use',
+                              style: TextStyle(
+                                  color: AppColors.white,
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: 'Bakbak',
+                                  fontSize: 14.w),
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () async {
+                              await restore();
+                              seen=true;
+                              Navigator.pop(context);
+                            },
+                            child: Text(
+                              'Restore',
+                              style: TextStyle(
+                                  color: AppColors.white,
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: 'Bakbak',
+                                  fontSize: 14.w),
+                            ),
+                          ),
+                          InkWell(
+                            onTap: ()=>openPrivacyPolicy(),
+                            child: Text(
+                              'Privacy Policy',
+                              style: TextStyle(
+                                  color: AppColors.white,
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: 'Bakbak',
+                                  fontSize: 14.w),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+                ]),
               ),
-              Opacity(
-                opacity: 0.5,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 48.w),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InkWell(
-                        onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>WebViewPage())),
-                        child: Text(
-                          'Terms of use',
-                          style: TextStyle(
-                              color: AppColors.white,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'Bakbak',
-                              fontSize: 14.w),
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () async {
-                          final box = await Hive.openBox<bool>('premium');
-                          await box.clear();
-                          await box.put('premium', true);
-                          premium=true;
-                          final onboardingSeen = await Hive.openBox<bool>('seen');
-                          await onboardingSeen.clear();
-                          await onboardingSeen.put('seen', true);
-                          seen=true;
-                          Navigator.pop(context);
-                        },
-                        child: Text(
-                          'Restore',
-                          style: TextStyle(
-                              color: AppColors.white,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'Bakbak',
-                              fontSize: 14.w),
-                        ),
-                      ),
-                      InkWell(
-                        onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>WebViewPage())),
-                        child: Text(
-                          'Privacy Policy',
-                          style: TextStyle(
-                              color: AppColors.white,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'Bakbak',
-                              fontSize: 14.w),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              )
+
             ],
           ),
         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_bet/gen/assets.gen.dart';
+import 'package:quiz_bet/main.dart';
 import 'package:quiz_bet/ui/screens/onboarding/ui/onboarding_screen.dart';
 import 'package:quiz_bet/ui/screens/webview/web.dart';
 import 'package:quiz_bet/ui/uikit/1xbet_label.dart';
@@ -47,7 +48,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               Padding(
                 padding: EdgeInsets.only(bottom: 16.h),
                 child: SettingsButton(
-                  onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>WebViewPage())),
+                  onPressed: ()=>openPrivacyPolicy(),
                   icon: Assets.images.privacyPolicy.svg(color: AppColors.white),
                   label: 'privacy policy',
                 ),
@@ -55,7 +56,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               Padding(
                 padding: EdgeInsets.only(bottom: 16.h),
                 child: SettingsButton(
-                    onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>WebViewPage())),
+                    onPressed: ()=>openTermsOfUse(),
                   icon: Assets.images.termsOfUse.svg(color: AppColors.white),
                   label: 'Terms of use',
                 ),
@@ -65,6 +66,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 child: SettingsButton(
                   icon: Assets.images.support.svg(color: AppColors.white),
                   label: 'support',
+                  onPressed: ()=>openSupport(),
                 ),
               ),
               Padding(

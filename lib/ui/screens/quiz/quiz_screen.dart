@@ -37,7 +37,7 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(child: Scaffold(
-      floatingActionButton: premium&&fiftyFiftyEnable
+      floatingActionButton: subscribed&&fiftyFiftyEnable
           ? Padding(
         padding: EdgeInsets.only(bottom: 107.h),
         child: InkWell(
