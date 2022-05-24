@@ -41,17 +41,8 @@ class _HomeScreenState extends State<HomeScreen> {
             return Scaffold(
               extendBodyBehindAppBar: true,
               extendBody: true,
+              backgroundColor: AppColors.bglBlue,
               body: Container(
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      AppColors.darkblue,
-                      AppColors.bglBlue,
-                    ],
-                  ),
-                ),
                 child: Center(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -69,10 +60,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Padding(
                                     padding: EdgeInsets.all(6.w),
                                     child: Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(8.h),
-                                        border: Border.all(color: AppColors.white.withOpacity(0.3))
-                                      ),
                                       child: RoundedRectangleBtn(
                                         label: (i).toString(),
                                         onTap: () => _onTap(i, data),

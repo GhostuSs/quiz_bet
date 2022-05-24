@@ -20,6 +20,10 @@ class $AssetsImagesGen {
   SvgGenImage get buyPremium =>
       const SvgGenImage('assets/images/buyPremium.svg');
 
+  /// File path: assets/images/onBoarding.png
+  AssetGenImage get onBoarding =>
+      const AssetGenImage('assets/images/onBoarding.png');
+
   /// File path: assets/images/onboardingBg.svg
   SvgGenImage get onboardingBg =>
       const SvgGenImage('assets/images/onboardingBg.svg');
@@ -39,12 +43,16 @@ class $AssetsImagesGen {
   /// File path: assets/images/termsOfUse.svg
   SvgGenImage get termsOfUse =>
       const SvgGenImage('assets/images/termsOfUse.svg');
+
+  /// File path: assets/images/xbet_logo.svg
+  SvgGenImage get xbetLogo => const SvgGenImage('assets/images/xbet_logo.svg');
 }
 
 class Assets {
   Assets._();
 
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const String quizes = 'assets/quizes.json';
 }
 
 class AssetGenImage extends AssetImage {

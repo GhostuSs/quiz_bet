@@ -53,12 +53,12 @@ class _QuizScreenState extends State<QuizScreen> {
             width: 200.w,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12.r),
-                color: AppColors.green),
+                color: AppColors.blue),
             child: Center(
               child: Text(
                 '50/50'.toUpperCase(),
                 style: TextStyle(
-                  color: AppColors.darkblue,
+                  color: AppColors.white,
                   fontWeight: FontWeight.w400,
                   fontFamily: 'Bakbak',
                   fontSize: 20.w,
@@ -79,15 +79,15 @@ class _QuizScreenState extends State<QuizScreen> {
             BottomNavigationBarItem(
                 icon: Assets.images.quiz.svg(color: AppColors.white),
                 label: 'Quiz',
-                activeIcon: Assets.images.quiz.svg(color: AppColors.green)),
+                activeIcon: Assets.images.quiz.svg(color: AppColors.blue)),
             BottomNavigationBarItem(
                 label: 'Settings',
                 icon: Assets.images.settings
                     .svg(color: AppColors.white, width: 24.w, height: 24.h),
                 activeIcon: Assets.images.settings
-                    .svg(color: AppColors.green, width: 24.w, height: 24.h)),
+                    .svg(color: AppColors.blue, width: 24.w, height: 24.h)),
           ],
-          backgroundColor: AppColors.bglBlue,
+          backgroundColor: AppColors.darkblue,
           unselectedLabelStyle: TextStyle(
             fontFamily: 'Bakbak',
             fontWeight: FontWeight.w400,
@@ -98,16 +98,7 @@ class _QuizScreenState extends State<QuizScreen> {
         ),
       ),
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              AppColors.darkblue,
-              AppColors.bglBlue,
-            ],
-          ),
-        ),
+        color: AppColors.bglBlue,
         child: Center(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -133,7 +124,7 @@ class _QuizScreenState extends State<QuizScreen> {
                       Visibility(
                           visible: visible[i] == true,
                           child: Padding(
-                            padding: EdgeInsets.all(3),
+                            padding: EdgeInsets.all(6.w),
                             child: Container(
                                 decoration: BoxDecoration(
                                     color: borderColorSelector(isChosen)[i],
@@ -146,12 +137,12 @@ class _QuizScreenState extends State<QuizScreen> {
                                       ? _onAnswerPressed(i)
                                       : null,
                                   child: Padding(
-                                    padding: EdgeInsets.all(8.h),
+                                    padding: EdgeInsets.all(3.h),
                                     child: Container(
                                       decoration: BoxDecoration(
                                           borderRadius:
                                           BorderRadius.circular(8.r),
-                                          color: AppColors.usualBlue),
+                                          color: AppColors.blue),
                                       width: 145.w,
                                       height: 145.h,
                                       child: Center(
@@ -208,7 +199,7 @@ class _QuizScreenState extends State<QuizScreen> {
         if (i == chosenAnswIndex) {
           if (widget.quiz[index].answers![chosenAnswIndex] ==
               widget.quiz[index].correct) {
-            colors[chosenAnswIndex] = AppColors.green;
+            colors[chosenAnswIndex] = AppColors.blue;
           } else {
             colors[chosenAnswIndex] = AppColors.red;
           }

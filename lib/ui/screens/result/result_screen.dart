@@ -38,15 +38,15 @@ class _ResultScreenState extends State<ResultScreen> {
             BottomNavigationBarItem(
                 icon: Assets.images.quiz.svg(color: AppColors.white),
                 label: 'Quiz',
-                activeIcon: Assets.images.quiz.svg(color: AppColors.green)),
+                activeIcon: Assets.images.quiz.svg(color: AppColors.blue)),
             BottomNavigationBarItem(
                 label: 'Settings',
                 icon: Assets.images.settings
                     .svg(color: AppColors.white, width: 24.w, height: 24.h),
                 activeIcon: Assets.images.settings
-                    .svg(color: AppColors.green, width: 24.w, height: 24.h)),
+                    .svg(color: AppColors.blue, width: 24.w, height: 24.h)),
           ],
-          backgroundColor: AppColors.bglBlue,
+          backgroundColor: AppColors.darkblue,
           unselectedLabelStyle: TextStyle(
             fontFamily: 'Bakbak',
             fontWeight: FontWeight.w400,
@@ -58,14 +58,7 @@ class _ResultScreenState extends State<ResultScreen> {
       ),
       body: Container(
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              AppColors.darkblue,
-              AppColors.bglBlue,
-            ],
-          ),
+          color: AppColors.bglBlue,
         ),
         child: Center(
           child: Padding(
@@ -137,12 +130,12 @@ class _ResultScreenState extends State<ResultScreen> {
                       width: 200.w,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12.r),
-                          color: AppColors.green),
+                          color: AppColors.blue),
                       child: Center(
                         child: Text(
                           'BACK'.toUpperCase(),
                           style: TextStyle(
-                            color: AppColors.darkblue,
+                            color: AppColors.white,
                             fontWeight: FontWeight.w400,
                             fontFamily: 'Bakbak',
                             fontSize: 22.w,

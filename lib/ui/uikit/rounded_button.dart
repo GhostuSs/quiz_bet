@@ -20,9 +20,9 @@ class RoundedRectangleBtn extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.h),
-          color: AppColors.usualBlue,
+          color: AppColors.blue,
         ),
-        width: 155.w,
+        width: 155.h,
         height: 155.h,
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -38,6 +38,7 @@ class RoundedRectangleBtn extends StatelessWidget {
                     fontWeight: FontWeight.w400),
               ),
             ),
+            SizedBox(height: 5.h,),
             if (label != 'RANDOM' && result != null)
               Text('${result!.correctAnswers}/5',
                   style: TextStyle(

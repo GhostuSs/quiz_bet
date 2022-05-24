@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:quiz_bet/gen/assets.gen.dart';
 import '../../data/app_settings/color_pallete/colors.dart';
 
 class XbelLabel extends StatelessWidget {
@@ -13,22 +14,7 @@ class XbelLabel extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            '1X',
-            style: TextStyle(
-                color: AppColors.white,
-                fontWeight: FontWeight.w400,
-                fontFamily: 'Bakbak',
-                fontSize: 44.h),
-          ),
-          Text(
-            'BEL',
-            style: TextStyle(
-                color: AppColors.green,
-                fontWeight: FontWeight.w400,
-                fontFamily: 'Bakbak',
-                fontSize: 44.h),
-          )
+          Assets.images.xbetLogo.svg(width: 122.w,height: 58.h)
         ],
       ),
     );

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_bet/gen/assets.gen.dart';
 import 'package:quiz_bet/ui/screens/onboarding/ui/onboarding_screen.dart';
 import 'package:quiz_bet/ui/screens/webview/web.dart';
+import 'package:quiz_bet/ui/uikit/1xbet_label.dart';
 import 'package:quiz_bet/ui/uikit/settings_button.dart';
 import '../../../data/app_settings/color_pallete/colors.dart';
 
@@ -19,43 +20,25 @@ class _SettingsScreenState extends State<SettingsScreen> {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
-            gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [AppColors.darkblue, AppColors.bglBlue],
-        )),
+            color: AppColors.bglBlue
+        ),
         child: Center(
           child: Column(
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(top: 46.h, bottom: 22.h),
+                padding: EdgeInsets.only(top: 22.h, bottom: 22.h),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      '1X',
-                      style: TextStyle(
-                          color: AppColors.white,
-                          fontWeight: FontWeight.w400,
-                          fontFamily: 'Bakbak',
-                          fontSize: 44.h),
-                    ),
-                    Text(
-                      'BEL',
-                      style: TextStyle(
-                          color: AppColors.green,
-                          fontWeight: FontWeight.w400,
-                          fontFamily: 'Bakbak',
-                          fontSize: 44.h),
-                    )
+                    XbelLabel()
                   ],
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(bottom: 16.h),
                 child: SettingsButton(
-                  icon: Assets.images.buyPremium.svg(),
+                  icon: Assets.images.buyPremium.svg(color: AppColors.white),
                   label: 'buy premium',
                   onPressed: () => Navigator.push(context,
                       MaterialPageRoute(builder: (_) => OnBoardingScreen())),
@@ -65,7 +48,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 padding: EdgeInsets.only(bottom: 16.h),
                 child: SettingsButton(
                   onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>WebViewPage())),
-                  icon: Assets.images.privacyPolicy.svg(),
+                  icon: Assets.images.privacyPolicy.svg(color: AppColors.white),
                   label: 'privacy policy',
                 ),
               ),
@@ -73,21 +56,21 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 padding: EdgeInsets.only(bottom: 16.h),
                 child: SettingsButton(
                     onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>WebViewPage())),
-                  icon: Assets.images.termsOfUse.svg(),
+                  icon: Assets.images.termsOfUse.svg(color: AppColors.white),
                   label: 'Terms of use',
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(bottom: 16.h),
                 child: SettingsButton(
-                  icon: Assets.images.support.svg(),
+                  icon: Assets.images.support.svg(color: AppColors.white),
                   label: 'support',
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(bottom: 16.h),
                 child: SettingsButton(
-                  icon: Assets.images.rateApp.svg(),
+                  icon: Assets.images.rateApp.svg(color: AppColors.white),
                   label: 'rate app',
                 ),
               )

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive/hive.dart';
 import 'package:quiz_bet/data/app_settings/color_pallete/colors.dart';
 import 'package:quiz_bet/data/app_settings/navigation/routes.dart';
+import 'package:quiz_bet/gen/assets.gen.dart';
 import 'package:quiz_bet/main.dart';
 import 'package:quiz_bet/ui/screens/webview/web.dart';
 
@@ -54,46 +55,47 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 ],
               ),
               SizedBox(
-                height: 30.h,
+                height: 60.h,
               ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    '1X',
-                    style: TextStyle(
-                      color: AppColors.white,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: 'Bakbak',
-                      fontSize: 112.w,
-                    ),
-                  ),
-                  Text(
-                    'BEL',
-                    style: TextStyle(
-                        color: AppColors.green,
-                        fontWeight: FontWeight.w400,
-                        fontFamily: 'Bakbak',
-                        fontSize: 112.w),
-                  )
-                ],
-              ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'QUIZ: SPORT',
-                    style: TextStyle(
-                        color: AppColors.white,
-                        height: 0.6,
-                        fontWeight: FontWeight.w400,
-                        fontFamily: 'Bakbak',
-                        fontSize: 51.w),
-                  )
-                ],
-              ),
+              Assets.images.xbetLogo.svg(),
+              // Row(
+              //   crossAxisAlignment: CrossAxisAlignment.end,
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     Text(
+              //       '1X',
+              //       style: TextStyle(
+              //         color: AppColors.white,
+              //         fontWeight: FontWeight.w400,
+              //         fontFamily: 'Bakbak',
+              //         fontSize: 112.w,
+              //       ),
+              //     ),
+              //     Text(
+              //       'BEL',
+              //       style: TextStyle(
+              //           color: AppColors.blue,
+              //           fontWeight: FontWeight.w400,
+              //           fontFamily: 'Bakbak',
+              //           fontSize: 112.w),
+              //     )
+              //   ],
+              // ),
+              // Row(
+              //   crossAxisAlignment: CrossAxisAlignment.start,
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     Text(
+              //       'QUIZ: SPORT',
+              //       style: TextStyle(
+              //           color: AppColors.white,
+              //           height: 0.6,
+              //           fontWeight: FontWeight.w400,
+              //           fontFamily: 'Bakbak',
+              //           fontSize: 51.w),
+              //     )
+              //   ],
+              // ),
               Padding(
                 padding: EdgeInsets.only(top: 95.h, bottom: 18.h),
                 child: Text(
@@ -109,7 +111,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               Container(
                 width: 159.w,
                 height: 1.5,
-                color: AppColors.green,
+                color: AppColors.blue,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 18.h),
@@ -125,7 +127,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               Container(
                 width: 159.w,
                 height: 1.5,
-                color: AppColors.green,
+                color: AppColors.blue,
               ),
               SizedBox(
                 height: 18.h,
@@ -157,7 +159,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     width: 327.w,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12.r),
-                        color: AppColors.green),
+                        color: AppColors.blue),
                     child: Center(
                       child: Text(
                         'Buy premium'.toUpperCase(),

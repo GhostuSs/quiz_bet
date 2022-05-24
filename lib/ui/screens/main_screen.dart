@@ -30,7 +30,7 @@ class _MainScreenState extends State<MainScreen> {
                     icon: Assets.images.quiz
                         .svg(color: AppColors.white.withOpacity(0.3)),
                     label: 'Quiz',
-                    activeIcon: Assets.images.quiz.svg(color: AppColors.green)),
+                    activeIcon: Assets.images.quiz.svg(color: AppColors.blue)),
                 BottomNavigationBarItem(
                     label: 'Settings',
                     icon: Assets.images.settings.svg(
@@ -38,9 +38,9 @@ class _MainScreenState extends State<MainScreen> {
                         width: 24.w,
                         height: 24.h),
                     activeIcon: Assets.images.settings.svg(
-                        color: AppColors.green, width: 24.w, height: 24.h)),
+                        color: AppColors.blue, width: 24.w, height: 24.h)),
               ],
-              backgroundColor: AppColors.bglBlue,
+              backgroundColor: AppColors.darkblue,
               unselectedLabelStyle: TextStyle(
                 fontFamily: 'Bakbak',
                 fontWeight: FontWeight.w400,

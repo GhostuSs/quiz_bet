@@ -45,7 +45,7 @@ class App extends StatelessWidget {
       designSize: const Size(390, 844),
       builder: () => MaterialApp(
         darkTheme: ThemeData(
-          selectedRowColor: AppColors.green,
+          selectedRowColor: AppColors.blue,
           unselectedWidgetColor: AppColors.white.withOpacity(0.3),
         ),
         routes: routes,
@@ -56,7 +56,7 @@ class App extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
           bottomNavigationBarTheme: BottomNavigationBarThemeData(
-              selectedItemColor: AppColors.green,
+              selectedItemColor: AppColors.blue,
               selectedLabelStyle: TextStyle(
                   fontFamily: 'Bakbak',
                   fontWeight: FontWeight.w400,
