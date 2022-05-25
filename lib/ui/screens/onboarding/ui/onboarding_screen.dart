@@ -54,7 +54,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 ],
               ),
               SizedBox(
-                height: 25.h,
+                height: 22.h,
               ),
               Assets.images.xbetLogo.svg(),
               // Row(
@@ -160,12 +160,12 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         color: AppColors.blue),
                     child: Center(
                       child: Text(
-                        'Buy premium'.toUpperCase(),
+                        "Buy premium (0.99\$)".toUpperCase(),
                         style: TextStyle(
                           color: AppColors.darkblue,
                           fontWeight: FontWeight.w400,
                           fontFamily: 'Bakbak',
-                          fontSize: 22.w,
+                          fontSize: 23.w,
                         ),
                       ),
                     ),
@@ -187,7 +187,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                   color: AppColors.white,
                                   fontWeight: FontWeight.w400,
                                   fontFamily: 'Bakbak',
-                                  fontSize: 14.w),
+                                  fontSize: 15.w),
                             ),
                           ),
                           InkWell(
@@ -202,7 +202,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                   color: AppColors.white,
                                   fontWeight: FontWeight.w400,
                                   fontFamily: 'Bakbak',
-                                  fontSize: 14.w),
+                                  fontSize: 15.w),
                             ),
                           ),
                           InkWell(
@@ -213,7 +213,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                   color: AppColors.white,
                                   fontWeight: FontWeight.w400,
                                   fontFamily: 'Bakbak',
-                                  fontSize: 14.w),
+                                  fontSize: 16.w),
                             ),
                           ),
                         ],

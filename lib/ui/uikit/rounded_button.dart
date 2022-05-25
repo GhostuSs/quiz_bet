@@ -22,8 +22,8 @@ class RoundedRectangleBtn extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.h),
           color: AppColors.blue,
         ),
-        width: 155.h,
-        height: 155.h,
+        width: 155.w,
+        height: 155.w,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -34,7 +34,7 @@ class RoundedRectangleBtn extends StatelessWidget {
                 style: TextStyle(
                     color: AppColors.white,
                     fontFamily: 'Bakbak',
-                    fontSize: label == 'RANDOM' ? 55.w : 65.w,
+                    fontSize: label == 'RANDOM' ? 55.w : 75.w,
                     fontWeight: FontWeight.w400),
               ),
             ),

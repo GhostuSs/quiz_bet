@@ -21,7 +21,7 @@ class SettingsButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(12.r),
         child: Container(
           width: double.infinity,
-          height: 58.h,
+          height: 58.w,
           decoration: BoxDecoration(
               color: AppColors.blue,
               borderRadius: BorderRadius.circular(12.r)),
@@ -31,7 +31,7 @@ class SettingsButton extends StatelessWidget {
               children: [
                 SizedBox(
                   width: 32.w,
-                  height: 32.h,
+                  height: 32.w,
                   child: icon,
                 ),
                 SizedBox(width: 16.w),
@@ -39,7 +39,7 @@ class SettingsButton extends StatelessWidget {
                   label.toUpperCase(),
                   style: TextStyle(
                     color: AppColors.white,
-                    fontSize: 22.h,
+                    fontSize: 22.w,
                     fontWeight: FontWeight.w400,
                     fontFamily: 'Bakbak',
                   ),

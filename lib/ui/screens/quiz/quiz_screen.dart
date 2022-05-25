@@ -143,8 +143,8 @@ class _QuizScreenState extends State<QuizScreen> {
                                           borderRadius:
                                           BorderRadius.circular(8.r),
                                           color: AppColors.blue),
-                                      width: 145.w,
-                                      height: 145.h,
+                                      width: 146.w,
+                                      height: 146.w,
                                       child: Center(
                                         child: Text(
                                           widget.quiz[index].answers![i]
