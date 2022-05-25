@@ -16,18 +16,17 @@ class RoundedRectangleBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(3.h),
+      borderRadius: BorderRadius.circular(10.h),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.h),
           color: AppColors.blue,
         ),
-        width: 155.h,
-        height: 155.h,
+        width: 185.h,
+        height: 185.h,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            SizedBox(height: 15.h,),
             Center(
               child: Text(
                 label,

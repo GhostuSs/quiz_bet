@@ -55,7 +55,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 ],
               ),
               SizedBox(
-                height: 60.h,
+                height: 25.h,
               ),
               Assets.images.xbetLogo.svg(),
               // Row(
@@ -97,7 +97,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               //   ],
               // ),
               Padding(
-                padding: EdgeInsets.only(top: 95.h, bottom: 18.h),
+                padding: EdgeInsets.only(top: 85.h, bottom: 18.h),
                 child: Text(
                   'Random Mode',
                   style: TextStyle(
@@ -150,7 +150,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     final seen = await Hive.openBox<bool>('seen');
                     await seen.clear();
                     await seen.put('seen', true);
-                    purchase().then((value) =>subscribed=value);
+                    await purchase().then((value) => subscribed=value);
                     Navigator.pushNamed(context, MainNavigationRoutes.main);
                   },
                   child: Container(
@@ -163,7 +163,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       child: Text(
                         'Buy premium'.toUpperCase(),
                         style: TextStyle(
-                          color: AppColors.white,
+                          color: AppColors.darkblue,
                           fontWeight: FontWeight.w400,
                           fontFamily: 'Bakbak',
                           fontSize: 22.w,

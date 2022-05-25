@@ -24,7 +24,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Iterable<HiveResult> results = [];
 
   Future<bool> loadHive() async {
-
     await Hive.openBox<HiveResult>('results')
         .then((value) => results = value.values);
     return true;
@@ -45,7 +44,6 @@ class _HomeScreenState extends State<HomeScreen> {
               body: Container(
                 child: Center(
                   child: Column(
-                    mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
@@ -55,37 +53,39 @@ class _HomeScreenState extends State<HomeScreen> {
                           padding: EdgeInsets.symmetric(horizontal: 24.w),
                           children: [
                             Wrap(
+                              alignment: WrapAlignment.center,
                               children: [
                                 for (int i = 1; i < 21; i++)
                                   Padding(
-                                    padding: EdgeInsets.all(6.w),
+                                    padding: EdgeInsets.all(8.w),
                                     child: Container(
                                       child: RoundedRectangleBtn(
                                         label: (i).toString(),
                                         onTap: () => _onTap(i, data),
                                         result: results
-                                            .where((element) =>
-                                        element.quizIndex ==
-                                            i.toString())
-                                            .isNotEmpty
+                                                .where((element) =>
+                                                    element.quizIndex ==
+                                                    i.toString())
+                                                .isNotEmpty
                                             ? results.firstWhere((element) =>
-                                        element.quizIndex == i.toString())
+                                                element.quizIndex ==
+                                                i.toString())
                                             : null,
                                       ),
                                     ),
                                   )
                               ],
                             ),
-                            if (subscribed==true)
+                            if (subscribed == true)
                               Padding(
                                 padding: EdgeInsets.symmetric(
-                                    horizontal: 8.w, vertical: 16.h),
+                                  horizontal: 8.w,
+                                  vertical: 16.h,
+                                ),
                                 child: Container(
                                   height: 100.h,
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8.r),
-                                    border: Border.all(color: AppColors.white.withOpacity(0.3))
-                                  ),
+                                      borderRadius: BorderRadius.circular(8.r),),
                                   child: RoundedRectangleBtn(
                                       label: 'RANDOM',
                                       onTap: () =>
