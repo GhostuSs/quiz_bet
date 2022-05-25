@@ -34,7 +34,7 @@ class RoundedRectangleBtn extends StatelessWidget {
                 style: TextStyle(
                     color: AppColors.white,
                     fontFamily: 'Bakbak',
-                    fontSize: label == 'RANDOM' ? 55.w : 75.w,
+                    fontSize: label == 'RANDOM' ? 60.w : 80.w,
                     fontWeight: FontWeight.w400),
               ),
             ),
@@ -43,7 +43,7 @@ class RoundedRectangleBtn extends StatelessWidget {
                   style: TextStyle(
                       color: AppColors.green,
                       fontFamily: 'Bakbak',
-                      fontSize: 24.w,
+                      fontSize: 28.w,
                       fontWeight: FontWeight.w400))
           ],
         ),

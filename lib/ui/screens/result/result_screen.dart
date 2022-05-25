@@ -30,9 +30,6 @@ class _ResultScreenState extends State<ResultScreen> {
     return WillPopScope(child: Scaffold(
       resizeToAvoidBottomInset: true,
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-            border: Border(top: BorderSide(color: Colors.black.withOpacity(0.3)))
-        ),
         child: BottomNavigationBar(
           items: [
             BottomNavigationBarItem(
