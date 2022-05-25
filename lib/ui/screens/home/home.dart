@@ -83,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   vertical: 16.h,
                                 ),
                                 child: Container(
-                                  height: 100.h,
+                                  height: 110.h,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(8.r),),
                                   child: RoundedRectangleBtn(
