@@ -22,8 +22,8 @@ class RoundedRectangleBtn extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.h),
           color: AppColors.blue,
         ),
-        width: 185.h,
-        height: 185.h,
+        width: 155.h,
+        height: 155.h,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [

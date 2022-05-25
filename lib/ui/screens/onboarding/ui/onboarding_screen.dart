@@ -5,7 +5,6 @@ import 'package:quiz_bet/data/app_settings/color_pallete/colors.dart';
 import 'package:quiz_bet/data/app_settings/navigation/routes.dart';
 import 'package:quiz_bet/gen/assets.gen.dart';
 import 'package:quiz_bet/main.dart';
-import 'package:quiz_bet/ui/screens/webview/web.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);

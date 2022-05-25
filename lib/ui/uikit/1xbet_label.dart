@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quiz_bet/gen/assets.gen.dart';
-import '../../data/app_settings/color_pallete/colors.dart';
 
 class XbelLabel extends StatelessWidget {
   const XbelLabel({Key? key}) : super(key: key);

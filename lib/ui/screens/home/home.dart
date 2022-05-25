@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: [
                                 for (int i = 1; i < 21; i++)
                                   Padding(
-                                    padding: EdgeInsets.all(8.w),
+                                    padding: EdgeInsets.all(4.w),
                                     child: Container(
                                       child: RoundedRectangleBtn(
                                         label: (i).toString(),
